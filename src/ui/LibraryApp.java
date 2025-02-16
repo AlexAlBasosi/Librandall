@@ -1,10 +1,12 @@
 package ui;
 
+import model.Book;
+
 public class LibraryApp {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
+		Book book = new Book("1984", "George Orwell", "123", false);
+		System.out.println(book.toString());
 	}
 
 }

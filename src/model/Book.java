@@ -45,10 +45,25 @@ public class Book {
 		return this.isBorrowed ? "Unavailable" : "Available";
 	}
 	
+	public Book() {
+		this.title = "";
+		this.author = "";
+		this.isbn = "";
+		this.isBorrowed = false;
+		this.status = this.getStatus();
+	}
+	
+	public Book(String title, String author, String isbn, boolean isBorrowed) {
+		this.title = title;
+		this.author = author;
+		this.isbn = isbn;
+		this.isBorrowed = isBorrowed;
+	}
+	
 	public String toString() {
 		return "\n\nTitle: " + this.title
 			+ "\nAuthor: " + this.author
 			+ "\nISBN: " + this.isbn
-			+ "\nStatus" + this.getStatus();
+			+ "\nStatus: " + this.getStatus();
 	}
 }
