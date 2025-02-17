@@ -7,42 +7,50 @@ public class Book {
 	private String isbn;
 	private boolean isBorrowed;
 	private String status;
-	// private Member member;
+	private Member member;
 	
-	String getTitle() {
+	public String getTitle() {
 		return this.title;
 	}
 	
-	void setTitle(String title) {
+	public void setTitle(String title) {
 		this.title = title;
 	}
 	
-	String getAuthor() {
+	public String getAuthor() {
 		return this.author;
 	}
 	
-	void setAuthor(String author) {
+	public void setAuthor(String author) {
 		this.author = author;
 	}
 	
-	String getIsbn() {
+	public String getIsbn() {
 		return this.isbn;
 	}
 	
-	void setIsbn(String isbn) {
+	public void setIsbn(String isbn) {
 		this.isbn = isbn;
 	}
 	
-	boolean getIsBorrowed() {
+	public boolean getIsBorrowed() {
 		return this.isBorrowed;
 	}
 	
-	void setIsBorrowed(boolean isBorrowed) {
+	public void setIsBorrowed(boolean isBorrowed) {
 		this.isBorrowed = isBorrowed;
 	}
 	
-	String getStatus() {
+	public String getStatus() {
 		return this.isBorrowed ? "Unavailable" : "Available";
+	}
+	
+	public Member getMember() {
+		return this.member;
+	}
+	
+	public void setMember(Member member) {
+		this.member = member;
 	}
 	
 	public Book() {
@@ -51,6 +59,7 @@ public class Book {
 		this.isbn = "";
 		this.isBorrowed = false;
 		this.status = this.getStatus();
+		this.member = null;
 	}
 	
 	public Book(String title, String author, String isbn, boolean isBorrowed) {
@@ -60,10 +69,18 @@ public class Book {
 		this.isBorrowed = isBorrowed;
 	}
 	
+	public Book(String title, String author, String isbn, boolean isBorrowed, Member member) {
+		this.title = title;
+		this.author = author;
+		this.isbn = isbn;
+		this.isBorrowed = isBorrowed;
+		this.member = member;
+	}
+	
 	public String toString() {
 		return "\n\nTitle: " + this.title
 			+ "\nAuthor: " + this.author
 			+ "\nISBN: " + this.isbn
-			+ "\nStatus: " + this.getStatus();
+			+ "\nStatus: " + this.getStatus() + "\n\n";
 	}
 }
