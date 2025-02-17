@@ -7,18 +7,34 @@ public class Library {
 	private ArrayList<Book> books;
 	private ArrayList<Member> members;
 	
+	public Library() {
+		this.books = new ArrayList<Book>();
+		this.members = new ArrayList<Member>();
+	}
+	
+	public Library(ArrayList<Book> books, ArrayList<Member> members) {
+		this.books = books;
+		this.members = members;
+	}
+	
 	public void addBook(Book book) {
 		try {
 			books.add(book);
-			System.out.println("Book added to the library!");
+			System.out.println("Book added to the library!\n");
 		} catch(Error e) {
-			System.out.println("There was an error adding book to the library. Error details: " + e);
+			System.out.println("There was an error adding book to the library. Error details: " + e + "\n");
 		}
 	}
 	
 	public void listBooks() {
-		books.forEach(book -> {
+		this.books.forEach(book -> {
 			System.out.println(book.toString());
+		});
+	}
+	
+	public void listMembers() {
+		this.members.forEach(member -> {
+			System.out.println(member.toString());
 		});
 	}
 }
