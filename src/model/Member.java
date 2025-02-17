@@ -47,6 +47,4 @@ public class Member {
 				+ "\nName: " + this.name
 				+ "\nContact Info: " + this.contactInfo + "\n\n";
 	}
-
-	
 }
