@@ -1,6 +1,7 @@
 package model;
 
 import java.util.ArrayList;
+import java.util.Objects;
 
 public class Library {
 	
@@ -68,13 +69,13 @@ public class Library {
 	}
 	
 	public boolean borrowBook(String isbn, int memberId) {
-		
+						
 		Book currentBook = null;
 		
 		// If book doesn't exist, return false.
 		
 		for (Book book : books) {
-			if (this.findBook(isbn) == null) {
+			if (Objects.equals(findBook(isbn), null)) {
 				System.out.println("Error borrowing book: Book not found.\n");
 				
 				return false;

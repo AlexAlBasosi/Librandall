@@ -8,7 +8,7 @@ import model.Member;
 
 public class LibraryApp {
 
-	public static void main(String[] args) {
+	public void LibraryScript() {
 		
 		// Book with no members
 		
