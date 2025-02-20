@@ -17,15 +17,6 @@ public class Library {
 		this.members = members;
 	}
 	
-	public void addBook(Book book) {
-		try {
-			books.add(book);
-			System.out.println("Book added to the library!\n");
-		} catch(Error e) {
-			System.out.println("There was an error adding book to the library. Error details: " + e + "\n");
-		}
-	}
-	
 	public void listBooks() {
 		this.books.forEach(book -> {
 			System.out.println(book.toString());
@@ -36,5 +27,23 @@ public class Library {
 		this.members.forEach(member -> {
 			System.out.println(member.toString());
 		});
+	}
+	
+	public void addBook(Book book) {
+		try {
+			books.add(book);
+			System.out.println("Book added to Librandall!\n");
+		} catch(Error e) {
+			System.out.println("There was an error adding book to the library. Error details: " + e + "\n");
+		}
+	}
+	
+	public void addMember(Member member) {
+		try {
+			members.add(member);
+			System.out.println("Member added!\n");
+		} catch(Error e) {
+			System.out.println("There was an error adding member. Error details: " + e + "\n");
+		}
 	}
 }

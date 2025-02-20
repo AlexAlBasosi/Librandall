@@ -58,5 +58,13 @@ public class LibraryApp {
 		
 		System.out.println("Your books: \n");
 		librandall.listBooks();
+		
+		// Adding Member
+		
+		System.out.println("Adding member...");
+		librandall.addMember(new Member(9626, "Alex Randall", "11 Borland Close"));
+		
+		System.out.println("Your members: \n");
+		librandall.listMembers();
 	}
 }
