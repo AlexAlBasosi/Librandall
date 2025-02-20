@@ -66,4 +66,44 @@ public class Library {
 		
 		return null;
 	}
+	
+	public boolean borrowBook(String isbn, int memberId) {
+		
+		Book currentBook = null;
+		
+		// If book doesn't exist, return false.
+		
+		for (Book book : books) {
+			if (this.findBook(isbn) == null) {
+				System.out.println("Error borrowing book: Book not found.\n");
+				
+				return false;
+			} else { 
+				currentBook = book;
+			}
+		}
+		
+		// If member doesn't exist, return false.
+		// Otherwise, set isBorrowed in book to true and setMember to member,
+		// and return true.
+		
+		for (Member member : members) {
+			if (this.findMember(memberId) == null) {
+				System.out.println("Error borrowing book: Member not found.\n");
+				
+				return false;
+			} else if (member.getMemberId() == memberId) {
+				System.out.println("Borrowing process complete. Enjoy your book!\n");
+				
+				currentBook.setIsBorrowed(true);
+				currentBook.setMember(member);
+				
+				return true;
+			}
+		}
+		
+		// Otherwise, return false.
+		
+		return false;
+	}
 }

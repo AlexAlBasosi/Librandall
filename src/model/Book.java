@@ -78,9 +78,17 @@ public class Book {
 	}
 	
 	public String toString() {
-		return "\n\nTitle: " + this.title
-			+ "\nAuthor: " + this.author
-			+ "\nISBN: " + this.isbn
-			+ "\nStatus: " + this.getStatus() + "\n\n";
+		if (!this.isBorrowed) {
+			return "\n\nTitle: " + this.title
+					+ "\nAuthor: " + this.author
+					+ "\nISBN: " + this.isbn
+					+ "\nStatus: " + this.getStatus() + "\n\n";
+		} else {
+			return "\n\nTitle: " + this.title
+					+ "\nAuthor: " + this.author
+					+ "\nISBN: " + this.isbn
+					+ "\nStatus: " + this.getStatus()
+					+ "\nCurrently being read by: " + this.getMember().getName() + "\n\n";
+		}
 	}
 }

@@ -84,5 +84,22 @@ public class LibraryApp {
 		members.add(new Member(9458, "Shannon Randall", "11 Borland Close"));
 		
 		System.out.println(librandall.findMember(9458));
+		
+		// Borrowing Book
+		
+		System.out.println("\n\n***Alex Randall is a big of a space geek. He wants to read Hitchiker's Guide to the Galaxy. Let's simulate this transaction...***\n\n");
+		
+		System.out.println("Book to be borrowed: " + librandall.findBook("42"));
+		
+		System.out.println("Borrowing book...\n");
+		librandall.borrowBook("42", 9626);
+		
+		System.out.println("The book now: " + librandall.findBook("42"));
+		
+		System.out.println("Testing case where book doesn't exist...\n");
+		librandall.borrowBook("potato", 9626);
+		
+		System.out.println("Testing case where member doesn't exist...\n");
+		librandall.borrowBook("19", 396);
 	}
 }
