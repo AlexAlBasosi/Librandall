@@ -117,7 +117,13 @@ public class LibraryApp {
 		librandall.returnBook("49");
 		
 		// Listing Available Books
+		
 		System.out.println("\n\nAvailable Books: \n");
 		librandall.listAvailableBooks();
+		
+		// Listing Borrowed Books
+		
+		System.out.println("\n\nBorrowed Books: \n");
+		librandall.listBorrowedBooks();
 	}
 }

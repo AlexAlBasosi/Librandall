@@ -140,4 +140,14 @@ public class Library {
 			}
 		}
 	}
+	
+	public void listBorrowedBooks() {
+		// Print books that have isBorrowed set to true.
+		
+		for(Book book : books) {
+			if(book.getIsBorrowed()) {
+				System.out.println(book);
+			}
+		}
+	}
 }
