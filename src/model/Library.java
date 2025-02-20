@@ -46,4 +46,14 @@ public class Library {
 			System.out.println("There was an error adding member. Error details: " + e + "\n");
 		}
 	}
+	
+	public Book findBook(String isbn) {
+		for (Book book : books) {
+			if (book.getIsbn().equals(isbn)) {
+				return book;
+			}
+		}
+		
+		return null;
+	}
 }

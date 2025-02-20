@@ -66,5 +66,16 @@ public class LibraryApp {
 		
 		System.out.println("Your members: \n");
 		librandall.listMembers();
+		
+		// Finding Book
+		
+		System.out.println("Adding book...");
+		books.add(new Book("A Hitchiker's Guide to the Galaxy", "Douglas Adams", "42", false));
+		
+		System.out.println("Finding books...");
+		System.out.println(librandall.findBook("123"));
+		System.out.println(librandall.findBook("456"));
+		System.out.println(librandall.findBook("19"));
+		System.out.println(librandall.findBook("42"));
 	}
 }
