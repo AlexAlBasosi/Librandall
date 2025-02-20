@@ -93,16 +93,40 @@ public class Library {
 				
 				return false;
 			} else if (member.getMemberId() == memberId) {
-				System.out.println("Borrowing process complete. Enjoy your book!\n");
 				
 				currentBook.setIsBorrowed(true);
 				currentBook.setMember(member);
+				
+				System.out.println("Borrowing process complete. Enjoy your book!\n");
 				
 				return true;
 			}
 		}
 		
 		// Otherwise, return false.
+		
+		return false;
+	}
+	
+	public boolean returnBook(String isbn) {
+		
+		// If book doesn't exist, return false.
+		
+		for (Book book : books) {
+			if (this.findBook(isbn) == null) {
+				System.out.println("Error returning book: Book not found.");
+				
+				return false;
+			} else if (book.getIsbn().equals(isbn)) {
+				
+				book.setIsBorrowed(false);
+				book.setMember(null);
+				
+				System.out.println("Returning process complete. I hope you enjoyed the book!");
+				
+				return true;
+			} 
+		}
 		
 		return false;
 	}

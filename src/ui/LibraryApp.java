@@ -101,5 +101,19 @@ public class LibraryApp {
 		
 		System.out.println("Testing case where member doesn't exist...\n");
 		librandall.borrowBook("19", 396);
+		
+		// Returning Book
+		
+		System.out.println("\n\n **Now, Alex Randall wants to return the book after completing it. Let's simulate this transaction...***\n\n");
+		
+		System.out.println("Book to be borrowed: " + librandall.findBook("42"));
+		
+		System.out.println("Returning book...\n");
+		librandall.returnBook("42");
+		
+		System.out.println("The book now: " + librandall.findBook("42"));
+		
+		System.out.println("Testing case where book doesn't exist...\n");
+		librandall.returnBook("49");
 	}
 }
