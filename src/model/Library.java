@@ -56,4 +56,14 @@ public class Library {
 		
 		return null;
 	}
+	
+	public Member findMember(int memberId) {
+		for (Member member : members) {
+			if (member.getMemberId() == memberId) {
+				return member;
+			}
+		}
+		
+		return null;
+	}
 }

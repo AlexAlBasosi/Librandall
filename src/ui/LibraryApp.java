@@ -77,5 +77,12 @@ public class LibraryApp {
 		System.out.println(librandall.findBook("456"));
 		System.out.println(librandall.findBook("19"));
 		System.out.println(librandall.findBook("42"));
+		
+		// Finding Member
+		
+		System.out.println("Adding member...");
+		members.add(new Member(9458, "Shannon Randall", "11 Borland Close"));
+		
+		System.out.println(librandall.findMember(9458));
 	}
 }
