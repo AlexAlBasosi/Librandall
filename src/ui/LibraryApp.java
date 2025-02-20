@@ -115,5 +115,9 @@ public class LibraryApp {
 		
 		System.out.println("Testing case where book doesn't exist...\n");
 		librandall.returnBook("49");
+		
+		// Listing Available Books
+		System.out.println("\n\nAvailable Books: \n");
+		librandall.listAvailableBooks();
 	}
 }

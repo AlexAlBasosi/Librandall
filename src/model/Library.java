@@ -130,4 +130,14 @@ public class Library {
 		
 		return false;
 	}
+	
+	public void listAvailableBooks() {
+		// Print books that have isBorrowed set to false.
+		
+		for (Book book : books) {
+			if(!book.getIsBorrowed()) {
+				System.out.println(book);
+			}
+		}
+	}
 }
