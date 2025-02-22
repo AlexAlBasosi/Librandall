@@ -6,6 +6,7 @@ import java.util.Scanner;
 
 import model.Book;
 import model.Library;
+import model.Member;
 
 public class Librandall {
 
@@ -57,7 +58,8 @@ public class Librandall {
 					
 					break;
 				case 6: 
-					System.out.println("\nYou selected 6!");
+					addMemberHandler(librandall, scanner);
+					
 					break;
 				case 7: 
 					System.out.println("\nYou selected 7!");
@@ -133,6 +135,22 @@ public class Librandall {
 	private static void listAvailableBooksHandler(Library librandall, Scanner scanner) {
 		System.out.println("\nThese are the books available: \n");
 		librandall.listAvailableBooks();
+	}
+	
+	private static void addMemberHandler(Library librandall, Scanner scanner) {
+		System.out.println("\nPlease enter the Member ID: \n");
+		int memberId = scanner.nextInt();
+		scanner.nextLine();
+		
+		System.out.println("\nPlease enter the Member's Name: \n");
+		String name = scanner.nextLine();
+		
+		System.out.println("\nPlease enter the Member's Contact Info: \n");
+		String contactInfo = scanner.nextLine();
+		
+		Member member = new Member(memberId, name, contactInfo);
+		
+		librandall.addMember(member);
 	}
 
 }

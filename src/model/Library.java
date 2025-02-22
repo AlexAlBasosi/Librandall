@@ -33,18 +33,18 @@ public class Library {
 	public void addBook(Book book) {
 		try {
 			books.add(book);
-			System.out.println("Book added to Librandall!\n");
+			System.out.println("\nBook added to Librandall!\n");
 		} catch(Error e) {
-			System.out.println("There was an error adding book to the library. Error details: " + e + "\n");
+			System.out.println("\nThere was an error adding book to the library. Error details: " + e + "\n");
 		}
 	}
 	
 	public void addMember(Member member) {
 		try {
 			members.add(member);
-			System.out.println("Member added!\n");
+			System.out.println("\nMember added!\n");
 		} catch(Error e) {
-			System.out.println("There was an error adding member. Error details: " + e + "\n");
+			System.out.println("\nThere was an error adding member. Error details: " + e + "\n");
 		}
 	}
 	
@@ -76,7 +76,7 @@ public class Library {
 		
 		for (Book book : books) {
 			if (Objects.equals(findBook(isbn), null)) {
-				System.out.println("Error borrowing book: Book not found.\n");
+				System.out.println("\nError borrowing book: Book not found.\n");
 				
 				return false;
 			} else { 
@@ -90,7 +90,7 @@ public class Library {
 		
 		for (Member member : members) {
 			if (this.findMember(memberId) == null) {
-				System.out.println("Error borrowing book: Member not found.\n");
+				System.out.println("\nError borrowing book: Member not found.\n");
 				
 				return false;
 			} else if (member.getMemberId() == memberId) {
@@ -98,7 +98,7 @@ public class Library {
 				currentBook.setIsBorrowed(true);
 				currentBook.setMember(member);
 				
-				System.out.println("Borrowing process complete. Enjoy your book!\n");
+				System.out.println("\nBorrowing process complete. Enjoy your book!\n");
 				
 				return true;
 			}
@@ -115,7 +115,7 @@ public class Library {
 		
 		for (Book book : books) {
 			if (this.findBook(isbn) == null) {
-				System.out.println("Error returning book: Book not found.");
+				System.out.println("\nError returning book: Book not found.");
 				
 				return false;
 			} else if (book.getIsbn().equals(isbn)) {
@@ -123,7 +123,7 @@ public class Library {
 				book.setIsBorrowed(false);
 				book.setMember(null);
 				
-				System.out.println("Returning process complete. I hope you enjoyed the book!");
+				System.out.println("\nReturning process complete. I hope you enjoyed the book!");
 				
 				return true;
 			} 
