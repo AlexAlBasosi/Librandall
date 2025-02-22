@@ -71,8 +71,8 @@ public class Librandall {
 					
 					break;
 				case 9:
-					System.out.println("\nYou selected 9!");
-					break;
+					System.out.println("\n\n*** Thank you for using Librandall. I bid you a pleasant day! ***\n\n");
+					return;
 				}
 					
 				
