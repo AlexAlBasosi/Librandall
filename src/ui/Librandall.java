@@ -62,7 +62,8 @@ public class Librandall {
 					
 					break;
 				case 7: 
-					System.out.println("\nYou selected 7!");
+					findBookHandler(librandall, scanner);
+					
 					break;
 				case 8:
 					System.out.println("\nYou selected 8!");
@@ -118,13 +119,13 @@ public class Librandall {
 	}
 	
 	private static void addBookHandler(Library librandall, Scanner scanner) {
-		System.out.println("\nPlease enter the Book Title: \n" );
+		System.out.println("\nPlease enter the Book's Title: \n" );
 		String title = scanner.nextLine();
 		
-		System.out.println("\nPlease enter the Book Author: \n" );
+		System.out.println("\nPlease enter the Book's Author: \n" );
 		String author = scanner.nextLine();
 		
-		System.out.println("\nPlease enter the Book ISBN: \n" );
+		System.out.println("\nPlease enter the Book's ISBN: \n" );
 		String isbn = scanner.nextLine();
 		
 		Book book = new Book(title, author, isbn, false);
@@ -152,5 +153,18 @@ public class Librandall {
 		
 		librandall.addMember(member);
 	}
-
+	
+	private static void findBookHandler(Library librandall, Scanner scanner) {
+		System.out.println("\nPlease enter the Book's ISBN: \n");
+		String isbn = scanner.nextLine();
+		
+		Book book = librandall.findBook(isbn);
+		
+		if(book != null) {
+			System.out.println("\nRequested Book: \n");
+			System.out.println(book);
+		} else { 
+			System.out.println("\nLibrandall has not found your book in its structures.\n");
+		}
+	}
 }
