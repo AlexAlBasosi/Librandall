@@ -46,7 +46,8 @@ public class Librandall {
 					System.out.println("\nYou selected 2!");
 					break;
 				case 3:
-					System.out.println("\nYou selected 3!");
+					listAvailableBooksHandler(librandall, scanner);
+					
 					break;
 				case 4:
 					System.out.println("\nYou selected 4!");
@@ -95,7 +96,7 @@ public class Librandall {
 		scanner.nextLine();
 		
 		if (choiceCase1 == 1) {
-			System.out.println("\n These are the books available: \n");
+			System.out.println("\nThese are the books available: \n");
 			librandall.listAvailableBooks();
 			
 			System.out.println("\nPlease enter the isbn of the book you would like to borrow (string): \n");
@@ -127,6 +128,11 @@ public class Librandall {
 		Book book = new Book(title, author, isbn, false);
 		
 		librandall.addBook(book);
+	}
+	
+	private static void listAvailableBooksHandler(Library librandall, Scanner scanner) {
+		System.out.println("\nThese are the books available: \n");
+		librandall.listAvailableBooks();
 	}
 
 }
