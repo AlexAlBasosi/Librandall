@@ -44,7 +44,8 @@ public class Librandall {
 										
 					break;
 				case 2:
-					System.out.println("\nYou selected 2!");
+					returnBookHandler(librandall, scanner);
+					
 					break;
 				case 3:
 					listAvailableBooksHandler(librandall, scanner);
@@ -112,7 +113,7 @@ public class Librandall {
 			int memberId = scanner.nextInt();
 			
 			if (librandall.borrowBook(isbn, memberId)) {
-				System.out.println("\nBook borrowed\n");
+				System.out.println("\nBook borrowed!\n");
 			} else {
 				System.out.println("\nError borrowing book.\n");
 			}
@@ -182,5 +183,12 @@ public class Librandall {
 		} else {
 			System.out.println("\nLibrandall has not found your member in its structures.\n");
 		}
+	}
+	
+	private static void returnBookHandler(Library librandall, Scanner scanner) {
+		System.out.println("\nPlease enter the Book's ISBN: \n");
+		String isbn = scanner.nextLine();
+		
+		librandall.returnBook(isbn);
 	}
 }
