@@ -4,6 +4,7 @@ import java.util.InputMismatchException;
 import java.util.NoSuchElementException;
 import java.util.Scanner;
 
+import model.Book;
 import model.Library;
 
 public class Librandall {
@@ -33,11 +34,13 @@ public class Librandall {
 			
 			try {
 				choice = scanner.nextInt();
-					
+				
+				scanner.nextLine();
+									
 				switch(choice) {
 				case 1:
 					borrowBookHandler(librandall, scanner);
-					
+										
 					break;
 				case 2:
 					System.out.println("\nYou selected 2!");
@@ -49,7 +52,8 @@ public class Librandall {
 					System.out.println("\nYou selected 4!");
 					break;
 				case 5:
-					System.out.println("\nYou selected 5!");
+					addBookHandler(librandall, scanner);
+					
 					break;
 				case 6: 
 					System.out.println("\nYou selected 6!");
@@ -108,6 +112,21 @@ public class Librandall {
 				System.out.println("\nError borrowing book.\n");
 			}
 		}
+	}
+	
+	private static void addBookHandler(Library librandall, Scanner scanner) {
+		System.out.println("\nPlease enter the Book Title: \n" );
+		String title = scanner.nextLine();
+		
+		System.out.println("\nPlease enter the Book Author: \n" );
+		String author = scanner.nextLine();
+		
+		System.out.println("\nPlease enter the Book ISBN: \n" );
+		String isbn = scanner.nextLine();
+		
+		Book book = new Book(title, author, isbn, false);
+		
+		librandall.addBook(book);
 	}
 
 }
