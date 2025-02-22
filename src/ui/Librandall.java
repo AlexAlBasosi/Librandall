@@ -66,7 +66,8 @@ public class Librandall {
 					
 					break;
 				case 8:
-					System.out.println("\nYou selected 8!");
+					findMemberHandler(librandall, scanner);
+					
 					break;
 				case 9:
 					System.out.println("\nYou selected 9!");
@@ -165,6 +166,21 @@ public class Librandall {
 			System.out.println(book);
 		} else { 
 			System.out.println("\nLibrandall has not found your book in its structures.\n");
+		}
+	}
+	
+	private static void findMemberHandler(Library librandall, Scanner scanner) {
+		System.out.println("\nPlease enter the Member's ID: \n");
+		int memberId = scanner.nextInt();
+		scanner.nextLine();
+		
+		Member member = librandall.findMember(memberId);
+		
+		if(member != null) {
+			System.out.println("\nRequested Member: \n");
+			System.out.println(member);
+		} else {
+			System.out.println("\nLibrandall has not found your member in its structures.\n");
 		}
 	}
 }
